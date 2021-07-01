@@ -47,3 +47,18 @@ The most important thing is that I have gained appreciation for Python. Before t
 Good night for now.
 
 ---
+
+I couldn't help myself. I added a while-loop that runs as long as the penalty number is lower than the penalty limit. So if the player loses the loop ends. I still need to take into account the player winning the game.
+
+I also added a rudimentary user input. The program asks the player for a letter but at the current state, doesn't check the player input. The player should be only able to input a single letter. Installing *readchar* using *pip* seems like a good option.
+
+```
+Juhas-Air:~ juha$ pip3 install readchar
+Collecting readchar
+  Downloading readchar-3.0.4-py3-none-any.whl (7.0 kB)
+Installing collected packages: readchar
+Successfully installed readchar-3.0.4
+Juhas-Air:~ juha$ 
+```
+
+I also need to check if the letter has already been used once.

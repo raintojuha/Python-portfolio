@@ -1,5 +1,7 @@
 import random
 import os
+import readchar
+
 
 formattedWord = ''
 penaltylimit = 10
@@ -18,22 +20,37 @@ def main():
 
 
 
-    #START LOOP
-    
-    printGUI(penalty)  
+    while penalty < penaltylimit:
+        printGUI(penalty)  
 
-    # USER INPUT
+        # USER INPUT
+        #userInput = input("Select a letter")
+        print('Select a letter:')
+        userInput = ''
+        userInput = readchar.readchar()
+        #userInput = str(userInput[1])
 
 
-    if checkWord(wordOfTheGame, formattedWord, 'a') != False:
-        print (formattedWord)
 
-    else:
-        #ADD penalty
-        penalty += 1
-        print(penalty)
 
-    #END LOOP
+        if checkWord(wordOfTheGame, formattedWord, userInput) == False:
+            penalty += 1
+
+
+        #END LOOP
+
+
+        '''
+        Global variable - won - true when palyer has won
+        while 
+        penalty <= penalty limit
+        won != true
+        
+        after loop
+        Do you want to continue?
+        Y/N
+        readchar
+        main()'''
 
 
 
