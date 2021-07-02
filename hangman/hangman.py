@@ -9,10 +9,17 @@ import readchar
 formattedWord = ''
 penaltylimit = 10
 
+
 # Main function
 def main():
+    # Integer - number of wrong guesses
     penalty = 0
+
+    # Boolean - Has player won
     hasWon = False
+
+    # List of spent, wrong letters
+    wrongLetters = []
 
     # Get a random word for the game
     wordOfTheGame = str(randomWord()) # cast it as a str
@@ -23,22 +30,21 @@ def main():
 
 
     while penalty < penaltylimit and hasWon == False:
-        printGUI(penalty)
+        # Draw GUI every cycle
+        printGUI(penalty, wrongLetters)     
         
-
-        # USER INPUT
-        #userInput = input("Select a letter")
+        # Take user input
         print('Select a letter:')
         userInput = ''
         userInput = readchar.readchar()
-        #userInput = str(userInput[1])
 
         if checkWord(wordOfTheGame, formattedWord, userInput) == False:
             penalty += 1
+            wrongLetters.append(userInput)
         
         hasWon = checkWinStatus()
 
-    printGUI(penalty)
+    printGUI(penalty, wrongLetters)
     printEndMessage(hasWon)
 
 
@@ -100,12 +106,13 @@ def replaceLetter(index, letter):
     formattedWord = "".join((formattedWord[:index], letter, formattedWord[index + 1:]))
 # ENDOF replaceLetter
 
-def printGUI(penalty):
+def printGUI(penalty, wrong):
     clearConsole()
     print('HANGMAN GAME')
     print('\n\n')
     printPenaltyBar(penalty)
     print(formattedWord)
+    print(wrong)
 #ENDOF printGUI
 
 def printEndMessage(won):
