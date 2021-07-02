@@ -38,9 +38,13 @@ def main():
         userInput = ''
         userInput = readchar.readchar()
 
-        if checkWord(wordOfTheGame, formattedWord, userInput) == False:
-            penalty += 1
-            wrongLetters.append(userInput)
+        # Check if the letter has been entered once
+        if userInput not in wrongLetters:
+            # Check if the letter fits the word
+            if checkWord(wordOfTheGame, formattedWord, userInput) == False:
+                # If it doesn't
+                penalty += 1 # Add 1 penalty
+                wrongLetters.append(userInput) # Add letter to list
         
         hasWon = checkWinStatus()
 

@@ -72,3 +72,11 @@ The game can now check if the player has won the game. At the end of each loop a
 **TO DO** used, wrong letters need to be shown to the player. Currently inputting the same letter over and over adds to the penalty. I'll add a list to keep track of used characters and not accept same characters again.
 
 ---
+
+The game now checks if the input is *not in* the list of wrong letters. If it is the program runs through the loop without a change.
+
+Only thing now is to make the printed list of wrong letters prettier and visualize the hangman.
+
+Also a longer list of words would be an improvement.
+
+---
