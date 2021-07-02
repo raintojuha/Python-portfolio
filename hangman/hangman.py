@@ -23,7 +23,8 @@ def main():
 
 
     while penalty < penaltylimit and hasWon == False:
-        printGUI(penalty)  
+        printGUI(penalty)
+        
 
         # USER INPUT
         #userInput = input("Select a letter")
@@ -34,6 +35,8 @@ def main():
 
         if checkWord(wordOfTheGame, formattedWord, userInput) == False:
             penalty += 1
+        
+        hasWon = checkWinStatus()
 
     printGUI(penalty)
     printEndMessage(hasWon)
@@ -84,6 +87,13 @@ def checkWord(word, formWord, letter):
     return(answer)
 # ENDOF checkWord
 
+def checkWinStatus():
+    won = True
+    for x in formattedWord:
+        if x == '_':
+            won = False
+    return won
+
 
 def replaceLetter(index, letter):
     global formattedWord
@@ -99,6 +109,7 @@ def printGUI(penalty):
 #ENDOF printGUI
 
 def printEndMessage(won):
+    print('\n\n')
     if(won == True):
         clearConsole
         print('*****************')

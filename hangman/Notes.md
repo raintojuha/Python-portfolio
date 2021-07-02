@@ -66,3 +66,9 @@ I also need to check if the letter has already been used once.
 ---
 
 **A new day** the game now informs you when you have lost and it offers a possibility to play again. One problem I've noticed is that the program comes impossible to terminate with *readchar* as it reads ctrl-c command as 'c' input.
+
+The game can now check if the player has won the game. At the end of each loop a checkWinStatus() function is called. The function runs through the formatted word searhing for an underscore. If an underscore is present there are still letters hidden so the players hasn't won and the function returns a False boolean.
+
+**TO DO** used, wrong letters need to be shown to the player. Currently inputting the same letter over and over adds to the penalty. I'll add a list to keep track of used characters and not accept same characters again.
+
+---
