@@ -4,6 +4,8 @@ A simple game programming exercise
 
 I started learning Python earlier today and have familiarized myself with variables, lists and operators. No user input yet but I'll look into it along the way.
 
+**Final thoughts and first release**. This project reminded myself of our second course into C++ at Kajaani UAS where we made a rock-paper-scissors game. A fun little project finished in two days. Now it's time to release the 1.0 version of this. I'll be back later in life to clean up the code. *hopefully*
+
 ### Game logic
 First we need to select a word for the player to quess. A more experienced programmer might do an online search for a random word every time but I think I'm going to start with a simple list of 10 words. _Okay I only got 7_.
 
