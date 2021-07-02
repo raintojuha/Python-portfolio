@@ -62,3 +62,7 @@ Juhas-Air:~ juha$
 ```
 
 I also need to check if the letter has already been used once.
+
+---
+
+**A new day** the game now informs you when you have lost and it offers a possibility to play again. One problem I've noticed is that the program comes impossible to terminate with *readchar* as it reads ctrl-c command as 'c' input.

@@ -1,5 +1,8 @@
+# Random number is used to select each word
 import random
+# OS library enables clearing of the terminal screen
 import os
+# Enables program to read one character at a time
 import readchar
 
 
@@ -9,6 +12,7 @@ penaltylimit = 10
 # Main function
 def main():
     penalty = 0
+    hasWon = False
 
     # Get a random word for the game
     wordOfTheGame = str(randomWord()) # cast it as a str
@@ -18,9 +22,7 @@ def main():
     formattedWord = formatWord(wordOfTheGame)
 
 
-
-
-    while penalty < penaltylimit:
+    while penalty < penaltylimit and hasWon == False:
         printGUI(penalty)  
 
         # USER INPUT
@@ -30,27 +32,11 @@ def main():
         userInput = readchar.readchar()
         #userInput = str(userInput[1])
 
-
-
-
         if checkWord(wordOfTheGame, formattedWord, userInput) == False:
             penalty += 1
 
-
-        #END LOOP
-
-
-        '''
-        Global variable - won - true when palyer has won
-        while 
-        penalty <= penalty limit
-        won != true
-        
-        after loop
-        Do you want to continue?
-        Y/N
-        readchar
-        main()'''
+    printGUI(penalty)
+    printEndMessage(hasWon)
 
 
 
@@ -111,6 +97,35 @@ def printGUI(penalty):
     printPenaltyBar(penalty)
     print(formattedWord)
 #ENDOF printGUI
+
+def printEndMessage(won):
+    if(won == True):
+        clearConsole
+        print('*****************')
+        print('*You won the game*')
+        print('*****************')
+    else:
+        clearConsole
+        print('*****************')
+        print('*You lost the game*')
+        print('*****************')
+
+    print('\n\n')
+
+    
+    input = ''
+    while input != 'y' and input != 'n':
+        print('Continue? (y/n)')
+        input = readchar.readchar()
+        print(input)
+
+    if input == 'y':
+        main()
+    elif input == 'n':
+        print('Good bye :D')
+    else:
+        print('Input not accepted')
+
 
 
 
