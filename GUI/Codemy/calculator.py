@@ -2,12 +2,10 @@
 
 from tkinter import *
 
+
 root = Tk()
 root.title('Calculator')
 
-# Calculator display
-display = Entry(root, width=30, justify='right')
-display.grid(row=0, column=0, columnspan=3)
 
 # Adds a number on the display via on screen buttons
 def addNumber(number):
@@ -23,11 +21,38 @@ def clearDisplay():
     # Clearing the screen
     display.delete(0, END)
 
+
+# When the 'Add' button is clicked
+def addition():
+    # Read the number currently on display
+    firstNumber = display.get()
+    # Global variable for the first number
+    global f_num
+    # Store the first number to the variable as an int
+    f_num = int(firstNumber)
+    # Clear the display for the second nuber
+    clearDisplay()
+
+def equals():
+    # Get the second number on the display
+    secondNumber = display.get()
+    clearDisplay()
+    display.insert(0, f_num + int(secondNumber))
+    
+
+# Calculator display
+display = Entry(root, width=30, justify='right')
+display.grid(row=0, column=0, columnspan=3)
+
+
 btn_clear = Button(root, text='CLR', padx=32, pady=20, command=clearDisplay).grid(row=1, column=0)
-btd_add = Button(root, text='+', padx=39, pady=20).grid(row=1, column=4)
 
-btn_equals = Button(root, text='=', padx=39, pady=20).grid(row=5, column=4)
+# MATH OPERATORS
+btd_add = Button(root, text='+', padx=39, pady=20, command=addition).grid(row=1, column=4)
+btn_equals = Button(root, text='=', padx=39, pady=20, command=equals).grid(row=5, column=4)
 
+
+# NUMPAD
 btn1 = Button(root, text='1', padx=40, pady=20, command=lambda: addNumber(1)).grid(row=4, column=0)
 btn2 = Button(root, text='2', padx=40, pady=20, command=lambda: addNumber(2)).grid(row=4, column=1)
 btn3 = Button(root, text='3', padx=40, pady=20, command=lambda: addNumber(3)).grid(row=4, column=2)
