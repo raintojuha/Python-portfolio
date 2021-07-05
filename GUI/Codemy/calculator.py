@@ -14,14 +14,14 @@ class Calculator:
 
         # Calculator display
         self.display = Entry(self.root, width=30, justify='right')
-        self.display.grid(row=0, column=0, columnspan=3)
+        self.display.grid(row=0, column=0, columnspan=4)
 
         # BUTTONS
         # math operators
-        self.btn_divide = Button(self.root, text='/', padx=39, pady=20, command=lambda:division(self)).grid(row=1, column=4)
-        self.btn_multiply = Button(self.root, text='*', padx=39, pady=20, command=lambda:multiplication(self)).grid(row=2, column=4)
-        self.btn_subtract = Button(self.root, text='-', padx=39, pady=20, command=lambda:subtraction(self)).grid(row=3, column=4)
-        self.btd_add = Button(self.root, text='+', padx=39, pady=20, command=lambda:addition(self)).grid(row=4, column=4)
+        self.btn_divide = Button(self.root, text='/', padx=39, pady=20, command=lambda:mathOperation(self, 'divide')).grid(row=1, column=4)
+        self.btn_multiply = Button(self.root, text='*', padx=39, pady=20, command=lambda:mathOperation(self, 'multiply')).grid(row=2, column=4)
+        self.btn_subtract = Button(self.root, text='-', padx=39, pady=20, command=lambda:mathOperation(self, 'subtract')).grid(row=3, column=4)
+        self.btd_add = Button(self.root, text='+', padx=39, pady=20, command=lambda:mathOperation(self, 'add')).grid(row=4, column=4)
         
 
         # utilities
@@ -61,61 +61,25 @@ def clearDisplay(self):
     # Clearing the screen
     self.display.delete(0, END)
 
-
-# When the '+' button is clicked
-def addition(self):
+def mathOperation(self, op):
     # Read the number currently on display
     firstNumber = self.display.get()
     # Global variable for the first number
     global f_num
-    # Global variable for passing the math operator
-    global operation
-    operation = 'addition'
     # Store the first number to the variable as an int
     f_num = int(firstNumber)
-    # Clear the display for the second nuber
-    clearDisplay(self)
-
-# When the '-' button is clicked
-def subtraction(self):
-    # Read the number currently on display
-    firstNumber = self.display.get()
-    # Global variable for the first number
-    global f_num
-    # Global variable for passing the math operator
+    # Global variable for the math operation
     global operation
-    operation = 'subtraction'
-    # Store the first number to the variable as an int
-    f_num = int(firstNumber)
-    # Clear the display for the second nuber
-    clearDisplay(self)
-
-# When the '*' button is clicked
-def multiplication(self):
-    # Read the number currently on display
-    firstNumber = self.display.get()
-    # Global variable for the first number
-    global f_num
-    # Global variable for passing the math operator
-    global operation
-    operation = 'multiplication'
-    # Store the first number to the variable as an int
-    f_num = int(firstNumber)
-    # Clear the display for the second nuber
-    clearDisplay(self)
-
-# When the '/' 
-def division(self):
-    # Read the number currently on display
-    firstNumber = self.display.get()
-    # Global variable for the first number
-    global f_num
-    # Global variable for passing the math operator
-    global operation
-    operation = 'division'
-    # Store the first number to the variable as an int
-    f_num = int(firstNumber)
-    # Clear the display for the second nuber
+    # Storing the operation
+    if op == 'add':
+        operation = 'addition'
+    if op == 'subtract':
+        operation = 'subtraction'
+    if op == 'multiply':
+        operation = 'multiplication'
+    if op == 'divide':
+        operation = 'division'
+    # Clear the display for the second number
     clearDisplay(self)
 
 # When the '=' button is clicked
