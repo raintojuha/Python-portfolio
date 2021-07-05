@@ -1,4 +1,4 @@
-# TKinter GUI fundamentals
+# Tkinter GUI fundamentals
 # 1. root window, label, pack()
 # 2. Grid system
 # 3. Buttons
