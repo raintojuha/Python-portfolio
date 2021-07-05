@@ -31,4 +31,5 @@ The calculator is now finished to the point where it needs to be tinkered with b
 - The program doesn't check for division by zero.
 - You can't chain math operations. e.g. 3+3+3+3 doesn't work, 3 + 3 = 6 + 3 = 9 + 3 = 12 does.
     -  Program need to check if there is a previous solution in memory when usiing math operations.
-        - If there is it needs to act like a equals button
+        - If there is it needs to act like an equals button
+
