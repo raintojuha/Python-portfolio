@@ -26,6 +26,8 @@ class imageViewer:
         self.displayImage(0)
         # Display toolbar
         self.toolbar()
+        # Display progress bar
+        self.progressBar()
         
 
         # Program main loop
@@ -52,6 +54,8 @@ class imageViewer:
         self.imageLabel = Label(image=self.imageList[index])
         # Put image on screen
         self.imageLabel.grid(row=0, column=0, columnspan=3)
+        # Update progress bar
+        self.progressBar()
         
 
     # Toolbar with previous, quit and next buttons
@@ -60,7 +64,12 @@ class imageViewer:
         quitButton = Button(self.root, text='Quit Program', command=self.root.quit).grid(row=1, column=1)
         fwdButton = Button(self.root, text='>>', command=self.nextImage).grid(row=1, column=2)
     
-
+    # A status bar to inform how many images there are
+    def progressBar(self):
+        txt = 'Image {} out of {}'
+        #print(txt.format(self.currentImage + 1, len(self.imageList)))
+        progress = Label(self.root, text=txt.format(self.currentImage + 1, len(self.imageList)))
+        progress.grid(row=2, column=1)
 
     # Move to previous image
     def previousImage(self):
