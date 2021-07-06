@@ -82,3 +82,8 @@ Only thing now is to make the printed list of wrong letters prettier and visuali
 Also a longer list of words would be an improvement.
 
 ---
+
+**In the future**
+- Make a GUI with TKinter for the game
+- Make different states of hangman as .git images
+- Continue? popup window with yes / no options
