@@ -28,7 +28,7 @@ button_quit.grid(row=0, column=0)
 
 # Images
 # define image
-my_img = ImageTk.PhotoImage(Image.open('images/scooter.jpg'))
+my_img = ImageTk.PhotoImage(Image.open('GUI/Codemy/images/scooter.jpg'))
 # put image inside label
 my_label = Label(image=my_img)
 # put label on screen
@@ -95,6 +95,13 @@ def update(value):
 
 frame2 = LabelFrame(root, text='Message boxes', padx=5, pady=5)
 frame2.grid(row=1, column=1, padx=10, pady=10)
+
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'å', 'ä', 'ö']
+            
+for x in alphabet:
+    i = 0
+    Button(frame2, text=x.capitalize()).pack(side=LEFT)
+    i += 1
 
 # Message box
 # showinfo, showwarning, showerror, askquestion, askokcancel, askyesno

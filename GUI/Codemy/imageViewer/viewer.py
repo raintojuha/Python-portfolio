@@ -36,11 +36,11 @@ class imageViewer:
     # Make a list of given images
     def getImages(self):
         # Variables for individual images
-        img1 = ImageTk.PhotoImage(Image.open('images/scooter.jpg'))
-        img2 = ImageTk.PhotoImage(Image.open('images/safari.jpg'))
-        img3 = ImageTk.PhotoImage(Image.open('images/town.jpg'))
-        img4 = ImageTk.PhotoImage(Image.open('images/fjord.jpg'))
-        img5 = ImageTk.PhotoImage(Image.open('images/dragonfly.jpg'))
+        img1 = ImageTk.PhotoImage(Image.open('GUI/Codemy/images/scooter.jpg'))
+        img2 = ImageTk.PhotoImage(Image.open('GUI/Codemy/images/safari.jpg'))
+        img3 = ImageTk.PhotoImage(Image.open('GUI/Codemy/images/town.jpg'))
+        img4 = ImageTk.PhotoImage(Image.open('GUI/Codemy/images/fjord.jpg'))
+        img5 = ImageTk.PhotoImage(Image.open('GUI/Codemy/images/dragonfly.jpg'))
         # Compile the list
         imageList = [img1, img2, img3, img4, img5]
         # Return the list
