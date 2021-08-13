@@ -87,3 +87,23 @@ Also a longer list of words would be an improvement.
 - Make a GUI with TKinter for the game
 - Make different states of hangman as .git images
 - Continue? popup window with yes / no options
+
+
+### TKinter version
+I have been working on this migration for two days and it's not so straight forward as I thought. I'll push my progress up until now and I'm going to take a little time off Python.
+
+I'm learning Python at the same time I'm doing my thesis and this is consuming me. I need to advance my thesis also. So, no updates for a while.
+
+Things I learned up until now;
+- I needed to replace the readchar() command taking user input
+  - I think it only reads terminal inputs, no good in TKinter
+  - I made a keyboard with Nordic alphabet from Buttons for this version
+
+- I need to rethink my program srtucture
+  - I want the buttons to indicate what letters have been wrong
+    - Different color, disabled?
+  - The 'keyboard' Buttons can call the function to check the letter
+  - They should also call the function to update the screen
+  - No definitive program loop in code
+    - Let's use mainloop() from TKinter and have the Buttons call the necessary functions
+      - checkLetter; if correct -> replaceLetter, checkWinStatus, updateScreen
