@@ -1,5 +1,5 @@
 # FizzBuzz
-# Juha Raintor
+# Juha Rainto
 # 21-07-2021 one late evening
 
 def fizz(num):
